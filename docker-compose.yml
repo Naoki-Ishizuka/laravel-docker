@@ -24,7 +24,7 @@ services:
     # コンテナの作成に使用するDockerfileのパス
     build:
       dockerfile: "./container/php/Dockerfile"
-    # srcディレクトリ内のファイルをコンテナ内の~/var/www/html配下にマウント
+    # src配下のファイルをコンテナ内の~/va/www/html配下に配置
     volumes:
       - "./src:/var/www/html"
 
@@ -60,4 +60,4 @@ services:
     ports: 
       - "7070:80"
     volumes:
-      - "/sessions"
+      - "./container/phpmyadmin/sessions:/sessions"
